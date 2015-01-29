@@ -1,0 +1,24 @@
+<!-- add code to the <head> of the page -->
+<head>
+  <title>Price Book</title>
+</head>
+
+<!-- add code to the <body> of the page -->
+<body>
+  <h1>Price Book</h1>
+  {{> itemList}}
+</body>
+
+<!-- define a template called itemList -->
+<template name="itemList">
+  <p>All Items</p>
+  {{#each items}}
+    {{> item}}
+  {{/each}}
+</template>
+
+<!-- define a template called item -->
+<template name="item">
+  <div>{{name}}</div>
+</template>
+
