@@ -15,7 +15,7 @@
   <table>
     <thead>
       <tr>
-        <th>Store</th>      
+        <th>Store</th>
         <th>Name</th>
         <th>Weight</th>
         <th>Weight Type</th>
@@ -25,7 +25,7 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>  
+    <tbody>
     {{#each items}}
       {{> item}}
     {{/each}}
@@ -44,11 +44,11 @@
     <td>{{qty}}</td>
     <td>{{qtyType}}</td>
     <td>{{price}}</td>
-    <td></td>
+    <td><button class="deleteItem">Delete</button></td>
   </tr>
 </template>
 
-<template name="addItem">      
+<template name="addItem">
   <form id="addItemForm">
     <label for="itemStore">Store:</label>
     <input type="text" id="itemStore">
@@ -61,7 +61,7 @@
     <label for="itemQty">Qty</label>
     <input type="text" id="itemQty">
     <label for="itemQtyType">Qty Type:</label>
-    <input type="text" id="itemQtyType"> 
+    <input type="text" id="itemQtyType">
     <label for="itemPrice">Price:</label>
     <input type="text" id="itemPrice">
     <input type="submit" id="addNewItem" value="Add Item">

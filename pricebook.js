@@ -7,6 +7,12 @@ if(Meteor.isClient){
     }
   });
 
+  Template.item.events({
+    'click .deleteItem': function(){
+      Items.remove(this._id);
+    }
+  });
+
   Template.addItem.events({
     'submit form': function(e, b){
       var newItem = {
@@ -22,8 +28,8 @@ if(Meteor.isClient){
       Items.insert(newItem);
 
       $('#addItemForm').find('input:text').val('');
-
+      $('#itemStore').focus();
       return false;
     }
-  });  
+  });
 }
