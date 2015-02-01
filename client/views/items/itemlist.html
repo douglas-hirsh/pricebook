@@ -1,0 +1,25 @@
+<!-- define a template called itemList -->
+<template name="itemList">
+  <p>All Items</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Store</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Weight Type</th>
+        <th>Qty</th>
+        <th>Qty Type</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each items}}
+      {{> item}}
+    {{/each}}
+    </tbody>
+  </table>
+  {{> addItem}}
+</template>
+
