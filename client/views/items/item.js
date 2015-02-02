@@ -25,7 +25,7 @@ Template.item.events({
       price: $("#editItemPrice").val()
     }
 
-    Items.update(Session.get('editItemId'), editItem);
+    Items.update(Session.get('editItemId'), {$set: editItem});
     Session.set('editItemId', null);
   }
 });

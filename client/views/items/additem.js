@@ -9,8 +9,11 @@ Template.addItem.events({
       qtyType: $('#itemQtyType').val(),
       price: $('#itemPrice').val()
     };
-
-    Items.insert(newItem);
+    
+    Items.insert(newItem, function(error, result) {
+      //The list of errors is available by calling Books.simpleSchema().namedContext("insertForm").invalidKeys()
+      console.log(error, result);
+    });
 
     $('#addItemForm').find('input:text').val('');
     $('#itemStore').focus();
