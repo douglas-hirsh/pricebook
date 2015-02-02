@@ -1,15 +1,28 @@
 <!-- define a template called item -->
 <template name="item">
-  <tr>
-    <td>{{store}}</td>
-    <td>{{name}}</td>
-    <td>{{weight}}</td>
-    <td>{{weightType}}</td>
-    <td>{{qty}}</td>
-    <td>{{qtyType}}</td>
-    <td>{{price}}</td>
-    <td><button class="deleteItem">Delete</button></td>
-  </tr>
+  {{#if editing}}
+    <tr>
+      <td><input type="text" id="editItemStore" value="{{store}}"></td>
+      <td><input type="text" id="editItemName" value="{{name}}"></td>
+      <td><input type="text" id="editItemWeight" value="{{weight}}"></td>
+      <td><input type="text" id="editItemWeightType" value="{{weightType}}"></td>
+      <td><input type="text" id="editItemQty" value="{{qty}}"></td>
+      <td><input type="text" id="editItemQtyType" value="{{qtyType}}"></td>
+      <td><input type="text" id="editItemPrice" value="{{price}}"></td>
+      <td><button class="saveItem">save</button><button class="cancelItem">Cancel</button></td>
+    </tr>
+  {{else}}
+    <tr>
+      <td>{{store}}</td>
+      <td>{{name}}</td>
+      <td>{{weight}}</td>
+      <td>{{weightType}}</td>
+      <td>{{qty}}</td>
+      <td>{{qtyType}}</td>
+      <td>{{price}}</td>
+      <td><button class="editItem">Edit</button><button class="deleteItem">Delete</button></td>
+    </tr>
+  {{/if}}
 </template>
 
 
