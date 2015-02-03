@@ -10,13 +10,16 @@ Template.addItem.events({
       price: $('#itemPrice').val()
     };
     
-    Items.insert(newItem, function(error, result) {
-      //The list of errors is available by calling Books.simpleSchema().namedContext("insertForm").invalidKeys()
-      console.log(error, result);
+    Items.insert(newItem, {validationContext: 'insertForm'}, function(error, result) {
+      if(!error){
+        $('#addItemForm').find('input:text').val('');
+        $('#itemStore').focus();
+      }
+      console.log(error.validationContext.getErrorObject().invalidKeys);
+      Items.simpleSchema().namedContext('insertForm').getErrorObject().invalidKeys.forEach(function(data){console.log(data.message)});
     });
 
-    $('#addItemForm').find('input:text').val('');
-    $('#itemStore').focus();
+    
     return false;
   }
 });
