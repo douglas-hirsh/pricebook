@@ -13,28 +13,28 @@ Items.attachSchema(new SimpleSchema({
   },
   weight: {
     type: Number,
-    label: "weight",
+    label: "Weight",
     decimal: true,
     min: 0  
   },
   weightType: {
     type: String,
-    label: "weightType",
+    label: "Weight Type",
     max: 200
   },
   qty: {
     type: Number,
-    label: "qty",
+    label: "Quantity",
     decimal: true
   },
   qtyType: {
     type: String,
-    label: "qtyType",
+    label: "Quantity Type",
     max: 200
   },
   price: {
     type: Number,
-    label: "price",
+    label: "Price",
     decimal: true
   }
 }));
