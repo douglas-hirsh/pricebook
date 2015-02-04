@@ -1,7 +1,11 @@
 Template.item.helpers({
   editing: function(){
     return Session.equals('editItemId', this._id);
-  }
+  },
+  errors: function(){
+    var context = Items.simpleSchema().namedContext('updateForm');
+    return context.invalidKeys().map(function(data){ return {message: function() {return context.keyErrorMessage(data.name)}}});
+  } 
 });
 
 Template.item.events({
@@ -12,6 +16,7 @@ Template.item.events({
     Session.set('editItemId', this._id);
   },
   'click .cancelItem': function(){
+    Items.simpleSchema().namedContext('updateForm').resetValidation();
     Session.set('editItemId', null);
   },
   'click .saveItem': function(){
@@ -25,8 +30,11 @@ Template.item.events({
       price: $("#editItemPrice").val()
     }
 
-    Items.update(Session.get('editItemId'), {$set: editItem});
-    Session.set('editItemId', null);
+    Items.update(Session.get('editItemId'), {$set: editItem}, {validationContext: 'updateForm'}, function(error, result) {
+      if(!error){
+        Session.set('editItemId', null);
+      }
+    });
   }
 });
 
