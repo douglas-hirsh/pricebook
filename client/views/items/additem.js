@@ -24,8 +24,9 @@ Template.addItem.events({
 
 Template.addItem.helpers({
   errors: function(){
+    console.log('running errors helper');
     var context = Items.simpleSchema().namedContext('insertForm');
-    return context.invalidKeys().map(function(data){ return {message: function() {return context.keyErrorMessage(data.name)}}});
+    return context.invalidKeys().map(function(data){ return {message: context.keyErrorMessage(data.name)}});
   }
 });
 
