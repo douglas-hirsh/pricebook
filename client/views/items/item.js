@@ -43,6 +43,9 @@ Template.item.events({
     if(e.keyCode === 13){
       saveItem();
     }
+    else if(e.keyCode === 27){
+      Session.set('editItemId', null);
+    }
   }
 });
 
