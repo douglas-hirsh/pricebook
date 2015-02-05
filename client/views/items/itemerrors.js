@@ -2,14 +2,16 @@ var contextName = "";
 
 Template.itemerrors.helpers({
   errors: function(){
-    var context = Items.simpleSchema().namedContext(this.contextName);
-    contextName = this.contextName;
+    var context = Items.simpleSchema().namedContext(contextName);
     return context.invalidKeys().map(function(data){ return {message: context.keyErrorMessage(data.name)}});
   },
   attributes: function(){
     return {
-      class: contextName + "errors"
+      class: "errors " + contextName
     };
   }
 });
 
+Template.itemerrors.created = function(){
+  contextName = this.data.contextName;
+}

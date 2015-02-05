@@ -1,7 +1,8 @@
 <template name="addItem">
+  {{> itemerrors contextName="insertForm"}}
   <form id="addItemForm">
     <label for="itemStore">Store:</label>
-    <input type="text" id="itemStore">
+    <input type="text" id="itemStore" >
     <label for="itemName">Name:</label>
     <input type="text" id="itemName">
     <label for="itemWeight">Weight:</label>
@@ -16,5 +17,4 @@
     <input type="text" id="itemPrice">
     <input type="submit" id="addNewItem" value="Add Item">
   </form>
-  {{> itemerrors contextName="insertForm"}}
 </template>
