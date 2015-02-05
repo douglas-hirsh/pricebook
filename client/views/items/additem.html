@@ -1,7 +1,4 @@
 <template name="addItem">
-  {{#each errors}}
-  <div>{{message}}</div>
-  {{/each}}
   <form id="addItemForm">
     <label for="itemStore">Store:</label>
     <input type="text" id="itemStore">
@@ -19,4 +16,5 @@
     <input type="text" id="itemPrice">
     <input type="submit" id="addNewItem" value="Add Item">
   </form>
+  {{> itemerrors contextName="insertForm"}}
 </template>

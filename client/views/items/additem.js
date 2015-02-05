@@ -18,14 +18,7 @@ Template.addItem.events({
     });
     
     return false;
-  },
-  
-});
-
-Template.addItem.helpers({
-  errors: function(){
-    var context = Items.simpleSchema().namedContext('insertForm');
-    return context.invalidKeys().map(function(data){ return {message: context.keyErrorMessage(data.name)}});
   }
+  
 });
 

@@ -2,10 +2,6 @@ Template.item.helpers({
   editing: function(){
     return Session.equals('editItemId', this._id);
   },
-  errors: function(){
-    var context = Items.simpleSchema().namedContext('updateForm');
-    return context.invalidKeys().map(function(data){ return {message: function() {return context.keyErrorMessage(data.name)}}});
-  } 
 });
 
 var saveItem = function(){

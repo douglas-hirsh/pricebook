@@ -9,7 +9,7 @@
       <td><input type="text" id="editItemQty" value="{{qty}}"></td>
       <td><input type="text" id="editItemQtyType" value="{{qtyType}}"></td>
       <td><input type="text" id="editItemPrice" value="{{price}}"></td>
-      <td><button class="saveItem">save</button><button class="cancelItem">Cancel</button>{{#each errors}}<div>{{message}}</div>{{/each}}</td>
+      <td><button class="saveItem">save</button><button class="cancelItem">Cancel</button>{{> itemerrors contextName="updateForm"}}</td>
     </tr>
   {{else}}
     <tr>
