@@ -9,12 +9,16 @@ Template.addItem.events({
       qtyType: $('#itemQtyType').val(),
       price: $('#itemPrice').val()
     };
-
-    Items.insert(newItem);
-
-    $('#addItemForm').find('input:text').val('');
-    $('#itemStore').focus();
+    
+    Items.insert(newItem, {validationContext: 'insertForm'}, function(error, result) {
+      if(!error){
+        $('#addItemForm').find('input:text').val('');
+        $('#itemStore').focus();
+      }
+    });
+    
     return false;
   }
+  
 });
 
