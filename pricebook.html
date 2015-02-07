@@ -5,8 +5,12 @@
 
 <!-- add code to the <body> of the page -->
 <body>
-  <h1>Price Book</h1>
-  {{> itemList}}
+  <nav class="ui menu">
+    <h1 class="header item">Price Book</h1>
+  </nav>
+  <div class="ui grid">
+    <div class="column">{{> itemList}}</div>
+  </div>
 </body>
 
 
