@@ -1,5 +1,15 @@
 <template name="itemerrors">
-  {{#each errors}}
-  <div class="errors {{../contextName}}">{{message}}</div>
-  {{/each}}
-</template>
+  {{#if errors}}
+    <div class="ui error message">
+      <i class="close icon"></i>
+      <div class="header">
+        There was some errors with your submission
+      </div>
+      <ul class="list">
+        {{#each errors}}
+          <li class="errors {{../contextName}}">{{message}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+ </template>
