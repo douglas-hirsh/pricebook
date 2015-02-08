@@ -1,14 +1,14 @@
 <!-- define a template called item -->
 <template name="item">
   {{#if editing}}
-    <tr>
-      <td><input type="text" id="editItemStore" value="{{store}}"></td>
-      <td><input type="text" id="editItemName" value="{{name}}"></td>
-      <td><input type="text" id="editItemWeight" value="{{weight}}"></td>
-      <td><input type="text" id="editItemWeightType" value="{{weightType}}"></td>
-      <td><input type="text" id="editItemQty" value="{{qty}}"></td>
-      <td><input type="text" id="editItemQtyType" value="{{qtyType}}"></td>
-      <td><input type="text" id="editItemPrice" value="{{price}}"></td>
+    <tr class="ui form">
+      <td><div class="ui mini input"><input type="text" id="editItemStore" value="{{store}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemName" value="{{name}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemWeight" value="{{weight}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemWeightType" value="{{weightType}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemQty" value="{{qty}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemQtyType" value="{{qtyType}}"></div></td>
+      <td><div class="ui mini input"><input type="text" id="editItemPrice" value="{{price}}"></div></td>
       <td><button class="ui mini primary button saveItem"><i class="ui save icon"></i>Save</button><button class="ui mini red button cancelItem"><i class="ui cancel icon"></i>Discard</button></td>
     </tr>
   {{else}}
