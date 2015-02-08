@@ -1,34 +1,12 @@
 <template name="addItem">
-  {{> itemerrors contextName="insertForm"}}
-  <form class="ui form" id="addItemForm">
-    <div class="ui mini input">
-      <label for="itemStore">Store:</label>
-      <input type="text" id="itemStore" >
-    </div>
-    <div class="ui mini input">
-      <label for="itemName">Name:</label>
-      <input type="text" id="itemName">
-    </div>
-    <div class="ui mini input">
-      <label for="itemWeight">Weight:</label>
-      <input type="text" id="itemWeight">
-    </div>
-    <div class="ui mini input">
-      <label for="itemWeightType">Weight Type:</label>
-      <input type="text" id="itemWeightType">
-    </div>
-    <div class="ui mini input">
-      <label for="itemQty">Qty</label>
-      <input type="text" id="itemQty">
-    </div>
-    <div class="ui mini input">
-      <label for="itemQtyType">Qty Type:</label>
-      <input type="text" id="itemQtyType">
-    </div>
-    <div class="ui mini input">
-      <label for="itemPrice">Price:</label>
-      <input type="text" id="itemPrice">
-    </div>
-    <input type="submit" id="addNewItem" value="Add Item">
-  </form>
+  <tr id="addItem" class="ui form">
+    <td><div class="ui mini input"><input type="text" id="itemStore"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemName"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemWeight"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemWeightType"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemQty"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemQtyType"></div></td>
+    <td><div class="ui mini input"><input type="text" id="itemPrice"></div></td>
+    <td><button class="ui mini green button"><i class="ui icon add"></i>Add</button></td>
+  </tr>
 </template>
