@@ -1,20 +1,34 @@
 <template name="addItem">
   {{> itemerrors contextName="insertForm"}}
-  <form id="addItemForm">
-    <label for="itemStore">Store:</label>
-    <input type="text" id="itemStore" >
-    <label for="itemName">Name:</label>
-    <input type="text" id="itemName">
-    <label for="itemWeight">Weight:</label>
-    <input type="text" id="itemWeight">
-    <label for="itemWeightType">Weight Type:</label>
-    <input type="text" id="itemWeightType">
-    <label for="itemQty">Qty</label>
-    <input type="text" id="itemQty">
-    <label for="itemQtyType">Qty Type:</label>
-    <input type="text" id="itemQtyType">
-    <label for="itemPrice">Price:</label>
-    <input type="text" id="itemPrice">
+  <form class="ui form" id="addItemForm">
+    <div class="ui mini input">
+      <label for="itemStore">Store:</label>
+      <input type="text" id="itemStore" >
+    </div>
+    <div class="ui mini input">
+      <label for="itemName">Name:</label>
+      <input type="text" id="itemName">
+    </div>
+    <div class="ui mini input">
+      <label for="itemWeight">Weight:</label>
+      <input type="text" id="itemWeight">
+    </div>
+    <div class="ui mini input">
+      <label for="itemWeightType">Weight Type:</label>
+      <input type="text" id="itemWeightType">
+    </div>
+    <div class="ui mini input">
+      <label for="itemQty">Qty</label>
+      <input type="text" id="itemQty">
+    </div>
+    <div class="ui mini input">
+      <label for="itemQtyType">Qty Type:</label>
+      <input type="text" id="itemQtyType">
+    </div>
+    <div class="ui mini input">
+      <label for="itemPrice">Price:</label>
+      <input type="text" id="itemPrice">
+    </div>
     <input type="submit" id="addNewItem" value="Add Item">
   </form>
 </template>
