@@ -1,8 +1,8 @@
 <!-- define a template called itemList -->
 <template name="itemList">
   <p>All Items</p>
+  {{> addItem}}
   {{> itemerrors contextName="updateForm" errorMessage="There was an error updating the record."}}
-  {{> itemerrors contextName="insertForm" errorMessage="There was an error inserting the record."}}
   <table class="ui small very compact celled striped table">
     <thead>
       <tr>
@@ -17,7 +17,6 @@
       </tr>
     </thead>
     <tbody>
-      {{> addItem}}
       {{#each items}}
         {{> item}}
       {{/each}}

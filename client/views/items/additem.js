@@ -11,27 +11,16 @@ var addItem = function(){
   
   Items.insert(newItem, {validationContext: 'insertForm'}, function(error, result) {
     if(!error){
-      $('#addItem').find('input:text').val('');
+      this.$('form').find('input:text').val('');
       $('#itemStore').focus();
     }
   });
 }
 
 Template.addItem.events({
-  'click button': function(e, b){
-    
+  'submit form': function(e, b){
+    addItem();
     return false;
-  },
-  'keypress input': function(e){
-    if(e.keyCode === 13){
-      addItem();
-    }
-    else if(e.keyCode === 27){
-      $('#addItem').find('input:text').val('');
-      $('#itemStore').focus();
-    }
-  }
-
-  
+  }  
 });
 
