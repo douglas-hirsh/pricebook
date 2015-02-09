@@ -1,40 +1,46 @@
 <template name="addItem">
+<div id="addItemAccordion" class="ui styled fluid accordion">
+  <div class="title">
+    <div class="ui mini green button"><i class="ui add icon"></i>Add Items</div>  
+  </div>
 
-  {{> itemerrors contextName="insertForm" errorMessage="There was an error inserting the record."}}
-  <form class="ui form" id="addItemForm">
-    <div class="two fields">
-      <div class="field">
-        <label for="itemStore">Store:</label>
-        <input type="text" id="itemStore" >
+  <div class="content">{{> itemerrors contextName="insertForm" errorMessage="There was an error inserting the record."}}
+    <form class="ui form" id="addItemForm">
+      <div class="two fields">
+        <div class="field">
+          <label for="itemStore">Store:</label>
+          <input type="text" id="itemStore">
+        </div>
+        <div class="field">
+          <label for="itemName">Item Description:</label>
+          <input type="text" id="itemName">
+        </div>
       </div>
-      <div class="field">
-        <label for="itemName">Item Description:</label>
-        <input type="text" id="itemName">
+      <div class="five fields">
+        <div class="field">
+          <label for="itemWeight">Weight:</label>
+          <input type="text" id="itemWeight">
+        </div>
+        <div class="field">
+          <label for="itemWeightType">Weight Type:</label>
+          <input type="text" id="itemWeightType">
+        </div>
+        <div class="field">
+          <label for="itemQty">Qty</label>
+          <input type="text" id="itemQty">
+        </div>
+        <div class="field">
+          <label for="itemQtyType">Qty Type:</label>
+          <input type="text" id="itemQtyType">
+        </div>
+        <div class="field">
+          <label for="itemPrice">Price:</label>
+          <input type="text" id="itemPrice">
+        </div>
       </div>
-    </div>
-    
-    <div class="five fields">
-    <div class="field">
-      <label for="itemWeight">Weight:</label>
-      <input type="text" id="itemWeight">
-    </div>
-    <div class="field">
-      <label for="itemWeightType">Weight Type:</label>
-      <input type="text" id="itemWeightType">
-    </div>
-    <div class="field">
-      <label for="itemQty">Qty</label>
-      <input type="text" id="itemQty">
-    </div>
-    <div class="field">
-      <label for="itemQtyType">Qty Type:</label>
-      <input type="text" id="itemQtyType">
-    </div>
-    <div class="field">
-      <label for="itemPrice">Price:</label>
-      <input type="text" id="itemPrice">
-    </div>
-    </div>
-    <input class="ui primary button" type="submit" id="addNewItem" value="Save">
-  </form>
+      <input type="submit" id="addNewItem" class="ui mini primary button" value="Save">
+      <div id="cancelButton" class="button ui mini red button">Cancel</div>
+    </form>
+  </div>
+</div>
 </template>

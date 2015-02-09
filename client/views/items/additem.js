@@ -8,7 +8,7 @@ var addItem = function(){
     qtyType: $('#itemQtyType').val(),
     price: $('#itemPrice').val()
   };
-  
+
   Items.insert(newItem, {validationContext: 'insertForm'}, function(error, result) {
     if(!error){
       this.$('form').find('input:text').val('');
@@ -18,9 +18,28 @@ var addItem = function(){
 }
 
 Template.addItem.events({
-  'submit form': function(e, b){
+  'submit form': function(e, template){
     addItem();
     return false;
-  }  
+  },
+  'click #cancelButton': function(e, template){
+    template.$('form').find('input:text').val('');
+  },
+  'keypress input': function(e, template){
+    if(e.keyCode === 27){
+      template.$('form').find('input:text').val('');
+      template.$('#addItemAccordion').accordion('close', 0);
+    } 
+  }
+ 
 });
+
+Template.addItem.rendered = function(){
+  var self = this;
+  $('#addItemAccordion.ui.accordion').accordion({
+    onOpen: function(){
+      self.$('#itemStore').focus();
+    }
+  });
+}
 
