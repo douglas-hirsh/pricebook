@@ -17,18 +17,22 @@ var addItem = function(){
   });
 }
 
+var resetForm = function(template){
+  template.$('form').find('input:text').val('');
+  template.$('#addItemAccordion').accordion('close', 0);
+}
+
 Template.addItem.events({
   'submit form': function(e, template){
     addItem();
     return false;
   },
   'click #cancelButton': function(e, template){
-    template.$('form').find('input:text').val('');
+    resetForm(template);
   },
   'keypress input': function(e, template){
     if(e.keyCode === 27){
-      template.$('form').find('input:text').val('');
-      template.$('#addItemAccordion').accordion('close', 0);
+      resetForm(template);
     } 
   }
  
