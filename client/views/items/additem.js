@@ -20,6 +20,7 @@ var addItem = function(){
 var resetForm = function(template){
   template.$('form').find('input:text').val('');
   template.$('#addItemAccordion').accordion('close', 0);
+  Items.simpleSchema().namedContext('insertForm').resetValidation();
 }
 
 Template.addItem.events({
