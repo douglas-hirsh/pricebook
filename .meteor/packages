@@ -8,3 +8,5 @@ meteor-platform
 insecure
 aldeed:collection2
 nooitaf:semantic-ui
+useraccounts:semantic-ui
+accounts-password
