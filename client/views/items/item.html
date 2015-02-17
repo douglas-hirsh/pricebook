@@ -9,7 +9,7 @@
       <td><div class="ui mini input"><input type="text" id="editItemQty" value="{{qty}}"></div></td>
       <td><div class="ui mini input"><input type="text" id="editItemQtyType" value="{{qtyType}}"></div></td>
       <td><div class="ui mini input"><input type="text" id="editItemPrice" value="{{price}}"></div></td>
-      <td><button class="ui mini primary button saveItem"><i class="ui save icon"></i>Save</button><button class="ui mini red button cancelItem"><i class="ui cancel icon"></i>Cancel</button></td>
+      {{#if isLoggedIn}}<td><button class="ui mini primary button saveItem"><i class="ui save icon"></i>Save</button><button class="ui mini red button cancelItem"><i class="ui cancel icon"></i>Cancel</button></td>{{/if}}
     </tr>
   {{else}}
     <tr>
@@ -20,7 +20,7 @@
       <td>{{qty}}</td>
       <td>{{qtyType}}</td>
       <td>{{price}}</td>
-      <td><button class="ui mini primary button editItem"><i class="ui edit icon"></i>Edit</button><button class="ui mini red button deleteItem"><i class="ui delete icon"></i>Delete</button></td>
+      {{#if isLoggedIn}}<td><button class="ui mini primary button editItem"><i class="ui edit icon"></i>Edit</button><button class="ui mini red button deleteItem"><i class="ui delete icon"></i>Delete</button></td>{{/if}}
     </tr>
   {{/if}}
 </template>
