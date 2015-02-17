@@ -1,0 +1,3 @@
+
+Template.itemhome.created = function(){
+}

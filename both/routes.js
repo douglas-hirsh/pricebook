@@ -1,3 +1,13 @@
+AccountsTemplates.configure({
+  defaultState: 'hide',
+  onSubmitHook: function(errors, state){
+    if(!errors){
+      AccountsTemplates.setState('hide');
+    }
+  }
+});
+
 Router.route('/', function () {
-    this.render('itemhome');
+  AccountsTemplates.setState('hide');
+  this.render('itemhome');
 });
