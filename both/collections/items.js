@@ -1,5 +1,11 @@
 Items = new Mongo.Collection('items');
 
+Items.before.insert(function (userId, doc) {
+  doc.owner = userId;  
+  //doc.createdAt = Date.now();
+  //doc.updateAt = Date.now();
+});
+
 Items.allow({
   insert: function (userId, doc) {
     // the user must be logged in, and the document must be owned by the user
@@ -12,8 +18,7 @@ Items.allow({
   remove: function (userId, doc) {
     // can only remove your own documents
     return doc.owner === userId;
-  },
-  fetch: ['owner']
+  }
 });
 
 Items.attachSchema(new SimpleSchema({
@@ -52,5 +57,9 @@ Items.attachSchema(new SimpleSchema({
     type: Number,
     label: "Price",
     decimal: true
+  },
+  owner: {
+    type: String,
+    label: 'owner'
   }
 }));

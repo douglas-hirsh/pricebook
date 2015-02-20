@@ -9,6 +9,8 @@ var addItem = function(){
     price: $('#itemPrice').val()
   };
 
+  console.log(newItem);
+
   Items.insert(newItem, {validationContext: 'insertForm'}, function(error, result) {
     if(!error){
       this.$('form').find('input:text').val('');

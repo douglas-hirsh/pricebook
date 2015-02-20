@@ -4,6 +4,11 @@ Template.item.helpers({
   editing: function(){
     return Session.equals('editItemId', this._id);
   },
+  canEdit: function(){
+    if(Meteor.userId() === this.owner){
+      return "hidden";
+    }
+  }
 });
 
 var saveItem = function(){
