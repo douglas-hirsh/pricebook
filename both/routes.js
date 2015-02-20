@@ -3,5 +3,5 @@ Router.configure({
   layoutTemplate: 'layout'
 });
 Router.route('/', function () {
-  this.render('itemhome');
+  this.render('itemList');
 });
