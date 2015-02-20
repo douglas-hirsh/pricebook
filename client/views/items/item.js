@@ -5,7 +5,7 @@ Template.item.helpers({
     return Session.equals('editItemId', this._id);
   },
   canEdit: function(){
-    if(Meteor.userId() === this.owner){
+    if(Meteor.userId() !== this.owner){
       return "hidden";
     }
   }
