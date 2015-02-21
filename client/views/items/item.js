@@ -1,5 +1,3 @@
-Meteor.subscribe('allItems');
-
 Template.item.helpers({
   editing: function(){
     return Session.equals('editItemId', this._id);
