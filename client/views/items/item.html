@@ -20,7 +20,7 @@
       <td>{{qty}}</td>
       <td>{{qtyType}}</td>
       <td>{{price}}</td>
-      <td><button class="ui mini primary button editItem"><i class="ui edit icon"></i>Edit</button><button class="ui mini red button deleteItem"><i class="ui delete icon"></i>Delete</button></td>
+      {{#if isLoggedIn}}<td>{{#if canEdit}}<button class="ui mini primary button editItem"><i class="ui edit icon"></i>Edit</button><button class="ui mini red button deleteItem"><i class="ui delete icon"></i>Delete</button>{{/if}}</td>{{/if}}
     </tr>
   {{/if}}
 </template>

@@ -2,6 +2,9 @@ Template.item.helpers({
   editing: function(){
     return Session.equals('editItemId', this._id);
   },
+  canEdit: function(){
+    return (Meteor.userId() === this.owner);
+  }
 });
 
 var saveItem = function(){

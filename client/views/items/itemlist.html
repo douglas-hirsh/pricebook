@@ -3,7 +3,7 @@
   <p>All Items</p>
   {{> addItem}}
   {{> itemerrors contextName="updateForm" errorMessage="There was an error updating the record."}}
-  <table class="ui small very compact celled striped table">
+  <table class="ui celled striped table">
     <thead>
       <tr>
         <th class="two column wide">Store</th>
@@ -13,7 +13,7 @@
         <th class="two column wide">Qty</th>
         <th class="two column wide">Qty Type</th>
         <th class="two column wide">Price</th>
-        <th></th>
+        {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
     </thead>
     <tbody>
