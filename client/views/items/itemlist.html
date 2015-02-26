@@ -15,6 +15,16 @@
         <th class="two column wide">Price</th>
         {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
+      <tr>
+        <th class="two column wide">{{> itemsearch columnName='store'}}</th>
+        <th class="two column wide">{{> itemsearch columnName='name'}}</th>
+        <th class="two column wide"></th>
+        <th class="two column wide">{{> itemsearch columnName='weightType'}}</th>
+        <th class="two column wide"></th>
+        <th class="two column wide">{{> itemsearch columnName='qtyType'}}</th>
+        <th class="two column wide"></th>
+        {{#if isLoggedIn}}<th></th>{{/if}}
+      </tr>
     </thead>
     <tbody>
       {{#each items}}
