@@ -1,3 +1,8 @@
 Meteor.publish("allItems", function (searchQuery) {
-  return Items.find({name: {$regex: searchQuery, $options: 'i'}},{limit:10});
+  var mongoQuery = {};
+  _.each(_.keys(searchQuery), function(key){
+    mongoQuery[key] = {$regex: searchQuery[key], $options: 'i'};
+  });
+
+  return Items.find(mongoQuery,{limit:10});
 });
