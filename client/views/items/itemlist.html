@@ -18,11 +18,11 @@
       <tr>
         <th class="two column wide">{{> itemsearch columnName='store'}}</th>
         <th class="two column wide">{{> itemsearch columnName='name'}}</th>
-        <th class="two column wide"></th>
-        <th class="two column wide">{{> itemsearch columnName='weightType'}}</th>
-        <th class="two column wide"></th>
+        <th class="two column wide">{{> itemsearch columnName='weight' number=true }}</th>
+        <th class="two column wide">{{> itemsearch columnName='weightType'}} </th>
+        <th class="two column wide">{{> itemsearch columnName='qty' number=true }}</th>
         <th class="two column wide">{{> itemsearch columnName='qtyType'}}</th>
-        <th class="two column wide"></th>
+        <th class="two column wide">{{> itemsearch columnName='price' number=true }}</th>
         {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
     </thead>

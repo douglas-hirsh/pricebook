@@ -3,7 +3,6 @@ Items = new Mongo.Collection('items');
 Items.before.insert(function (userId, doc) {
   doc.owner = userId;  
   //doc.createdAt = Date.now();
-  //doc.updateAt = Date.now();
 });
 
 Items.allow({
