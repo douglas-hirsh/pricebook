@@ -3,7 +3,7 @@
   <p>All Items</p>
   {{> addItem}}
   {{> itemerrors contextName="updateForm" errorMessage="There was an error updating the record."}}
-  <table class="ui celled striped table">
+  <table class="ui compact celled table">
     <thead>
       <tr>
         <th class="two column wide">Store</th>
@@ -15,14 +15,14 @@
         <th class="two column wide">Price</th>
         {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
-      <tr>
-        <th class="two column wide">{{> itemsearch columnName='store'}}</th>
-        <th class="two column wide">{{> itemsearch columnName='name'}}</th>
-        <th class="two column wide">{{> itemsearch columnName='weight' number=true }}</th>
-        <th class="two column wide">{{> itemsearch columnName='weightType'}} </th>
-        <th class="two column wide">{{> itemsearch columnName='qty' number=true }}</th>
-        <th class="two column wide">{{> itemsearch columnName='qtyType'}}</th>
-        <th class="two column wide">{{> itemsearch columnName='price' number=true }}</th>
+      <tr class="filterRow">
+        <th>{{> itemsearch columnName='store'}}</th>
+        <th>{{> itemsearch columnName='name'}}</th>
+        <th>{{> itemsearch columnName='weight' number=true }}</th>
+        <th>{{> itemsearch columnName='weightType'}} </th>
+        <th>{{> itemsearch columnName='qty' number=true }}</th>
+        <th>{{> itemsearch columnName='qtyType'}}</th>
+        <th>{{> itemsearch columnName='price' number=true }}</th>
         {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
     </thead>
