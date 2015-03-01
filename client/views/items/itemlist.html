@@ -6,23 +6,13 @@
   <table class="ui compact celled table">
     <thead>
       <tr>
-        <th class="two column wide">Store</th>
-        <th class="two column wide">Name</th>
-        <th class="two column wide">Weight</th>
-        <th class="two column wide">Weight Type</th>
-        <th class="two column wide">Qty</th>
-        <th class="two column wide">Qty Type</th>
-        <th class="two column wide">Price</th>
-        {{#if isLoggedIn}}<th></th>{{/if}}
-      </tr>
-      <tr class="filterRow">
-        <th>{{> itemsearch columnName='store'}}</th>
-        <th>{{> itemsearch columnName='name'}}</th>
-        <th>{{> itemsearch columnName='weight' number=true }}</th>
-        <th>{{> itemsearch columnName='weightType'}} </th>
-        <th>{{> itemsearch columnName='qty' number=true }}</th>
-        <th>{{> itemsearch columnName='qtyType'}}</th>
-        <th>{{> itemsearch columnName='price' number=true }}</th>
+        <th class="two column wide"><i class="ui search icon" id="searchButton"></i>Store{{> itemsearch columnName='store'}}</th>
+        <th class="two column wide">Name{{> itemsearch columnName='name'}}</th>
+        <th class="two column wide">Weight{{> itemsearch columnName='weight' number=true }}</th>
+        <th class="two column wide">Weight Type{{> itemsearch columnName='weightType'}}</th>
+        <th class="two column wide">Qty{{> itemsearch columnName='qty' number=true }}</th>
+        <th class="two column wide">Qty Type{{> itemsearch columnName='qtyType'}}</th>
+        <th class="two column wide">Price{{> itemsearch columnName='price' number=true }}</th>
         {{#if isLoggedIn}}<th></th>{{/if}}
       </tr>
     </thead>

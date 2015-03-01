@@ -1,5 +1,7 @@
 table.ui .filterRow th{
   background-color: white;
-} 
+}
 
-
+#searchButton {
+  cursor: pointer;
+}

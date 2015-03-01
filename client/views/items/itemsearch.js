@@ -18,9 +18,10 @@ Template.itemsearch.events({
   },500)
 });
 
-Template.itemsearch.rendered=function(){
-  var searchQuery = Session.get('searchQuery') || {};
-  var searchColumnValue = searchQuery[this.data.columnName] || '';
+Template.itemsearch.helpers({
+  searchValue: function() {
+    return Session.get('searchQuery')[this.columnName];
+  }
+});
 
-  this.$('.searchInput').val(searchColumnValue);
-}
+
