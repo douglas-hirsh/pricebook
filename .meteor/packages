@@ -6,7 +6,8 @@
 
 meteor-platform
 aldeed:collection2
-nooitaf:semantic-ui
 useraccounts:semantic-ui
 accounts-password
 matb33:collection-hooks
+semantic:ui-css
+msavin:mongol

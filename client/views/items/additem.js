@@ -41,7 +41,7 @@ Template.addItem.events({
 
 Template.addItem.rendered = function(){
   var self = this;
-  $('#addItemAccordion.ui.accordion').accordion({
+  self.$('#addItemAccordion.ui.accordion').accordion({
     onOpen: function(){
       self.$('#itemStore').focus();
     }

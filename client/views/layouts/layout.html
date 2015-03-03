@@ -4,6 +4,11 @@
     <div class="right menu">
       {{> atNavButton}}
     </div>
+    {{#if currentUser}}
+      <div class="right item">
+        Welcome, {{ currentUserName }}
+      </div>
+    {{/if}}
   </nav>
   <div class="ui grid">
     <div class="column">{{> yield}}</div>
