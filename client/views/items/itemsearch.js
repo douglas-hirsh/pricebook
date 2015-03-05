@@ -20,7 +20,13 @@ Template.itemsearch.events({
 
 Template.itemsearch.helpers({
   searchValue: function() {
-    return Session.get('searchQuery')[this.columnName];
+    var searchQuery = Session.get('searchQuery');
+
+    if(searchQuery && searchQuery[this.columnName]){
+      return searchQuery[this.columnName];
+    } else {
+      return '';
+    }
   }
 });
 
