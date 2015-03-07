@@ -1,7 +1,9 @@
 <!-- define a template called itemList -->
 <template name="itemList">
   <p>All Items</p>
-  {{> addItem}}
+  {{#if isLoggedIn}}
+    {{> addItem}}
+  {{/if}}
   {{> itemerrors contextName="updateForm" errorMessage="There was an error updating the record."}}
   <table class="ui compact celled striped table">
     <thead>
