@@ -32,15 +32,12 @@ if (!(typeof MochaWeb === 'undefined')){
             $('#at-btn').click();
             setTimeout(function(){
               chai.assert.equal($('table thead tr th').length, 8);
+              signInAndOutButton.click();
               done();
-
             }, 500)
-
-          },500);
-
-          
+          },500); 
         }, 500);
       });
-    }); 
+    });
   });
 }
